@@ -1,0 +1,20 @@
+<mvc:View 
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+    <App >
+        <pages>
+            <Page 
+                title="Overview"
+				backgroundDesign= "Solid">
+                <Title
+                    level="H1"
+                    titleStyle="H1"
+                    text="Delta's Food Vendors"/>
+            </Page>
+        </pages>
+	</App>
+</mvc:View>

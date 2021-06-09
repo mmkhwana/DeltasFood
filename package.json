@@ -1,0 +1,24 @@
+{
+  "name": "DeltasFood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^17.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmkhwana/DeltasFood.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmkhwana/DeltasFood/issues"
+  },
+  "homepage": "https://github.com/mmkhwana/DeltasFood#readme"
+}

@@ -1,0 +1,237 @@
+{
+    "_version": "1.1.0",
+
+	"start_url": "<startUrl>",
+
+    "sap.app": {
+        "_version": "1.1.0",
+        "id": "<id>",
+        "type": "application",
+        "i18n": "<i18nPathRelativeToManifest>",
+        "applicationVersion": {
+            "version": "<version>"
+        },
+        "title": "{{<title>}}",
+        "tags": {
+            "keywords": [
+                "{{<keyword1>}}", "{{<keyword2>}}"
+            ]
+        },
+        "dataSources": {
+            "<dataSourceAlias>": {
+                "uri": "<uri>",
+                "settings": {
+                    "localUri": "<localUri>"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "_version": "1.1.0",
+        "icons": {
+            "icon": "<icon>",
+            "favIcon": "<favIcon>",
+            "phone": "<phone>",
+            "phone@2": "<phone@2>",
+            "tablet": "<tablet>",
+            "tablet@2": "<tablet@2>"
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_hcb",
+            "sap_bluecrystal"
+        ]
+    },
+    "sap.ui5": {
+        "_version": "1.1.0",
+        "resources": {
+            "js": [
+                {
+                    "uri": "<uri>"
+                }
+            ],
+            "css": [
+                {
+                    "uri": "<uri>",
+                    "id": "<id>"
+                }
+            ]
+        },
+        "dependencies": {
+            "minUI5Version": "<minUI5Version>",
+            "libs": {
+                "<ui5lib1>": {                   
+                    "minVersion": "<minVersion1>"
+                },
+                "<ui5lib2>": {                   
+                    "minVersion": "<minVersion2>"
+                }
+            },
+            "components": {
+                "<ui5component1>": {
+                    "minVersion": "<minComp1Version>"
+                }
+            }
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "<uriRelativeToManifest>"
+            },
+            "": {
+                "dataSource": "<dataSourceAlias>",
+                "settings": {}
+            }
+        },
+        "rootView": "<rootView>",
+        "handleValidation": false,
+        "config": {
+
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "viewLevel": 1,
+                "viewPath": "sap.ui.demo.walkthrough.view",
+                "controlId": "app",
+                "controlAggregation": "pages",
+                "clearControlAggregation": false,
+                "async": true
+             },
+             "routes": [{
+                "name": "App",
+                "pattern": "",
+                "titleTarget": "",
+                "greedy": false,
+                "target": ["Target_App"]
+             },
+             {
+                "name": "LoginFormRout",
+                "pattern": "LoginForm",
+                "titleTarget": "",
+                "greedy": false,
+                "target": ["Target_LoginForm"]
+             },
+             {
+                "name": "SplitAppRout",
+                "pattern": "SplitApp",
+                "titleTarget": "",
+                "greedy": false,
+                "target": ["Target_SplitApp"]
+             },
+             {
+                "name": "DeltaAdminRout",
+                "pattern": "DeltaAdmin",
+                "titleTarget": "",
+                "greedy": false,
+                "target": ["Target_DeltaAdmin"]
+             },
+             {
+                "name": "MasterRout",
+                "pattern": "Master",
+                "titleTarget": "",
+                "greedy": false,
+                "target": ["Target_Master"]
+             },{
+                "name": "VendorapplicationRout",
+                "pattern": "Vendorapplication",
+                "titleTarget": "",
+                "greedy": false,
+                "target": ["Target_Vendorapplication"]
+             },{
+                "name": "VendorStatusRout",
+                "pattern": "VendorStatus",
+                "titleTarget": "",
+                "greedy": false,
+                "target": ["Target_VendorStatus"]
+             },{
+                "name": "OverViewRout",
+                "pattern": "Overview",
+                "titleTarget": "",
+                "greedy": false,
+                "target": ["Target_OverView"]
+             }],
+             "targets": {
+                "Target_App": {
+                   "viewId": "IdApp",
+                   "viewName": "App",
+                   "viewType": "XML",
+                   "clearAggregation": true,
+                   "transition": "flip"
+                },
+                "Target_LoginForm": {
+                    "viewId": "idLoginForm",
+                   "viewName": "LoginForm",
+                   "viewType": "XML",
+                   "clearAggregation": true,
+                   "transition": "flip"
+                },
+                "Target_SplitApp": {
+                    "viewId": "IdSplitApp",
+                   "viewName": "SpiltApp",
+                   "viewType": "XML",
+                   "clearAggregation": true,
+                   "transition": "flip"
+                },
+                "Target_DeltaAdmin": {
+                    "viewId": "IdDeltaAdmin",
+                   "viewName": "DeltaAdmin",
+                   "viewType": "XML",
+                   "clearAggregation": true,
+                   "transition": "flip"
+                },
+                "Target_Master": {
+                    "viewId": "IMaster",
+                   "viewName": "Master",
+                   "viewType": "XML",
+                   "clearAggregation": true,
+                   "transition": "flip"
+                },
+                "Target_Vendorapplication": {
+                    "viewId": "idVendorApp",
+                   "viewName": "Vendorapplication",
+                   "viewType": "XML",
+                   "clearAggregation": true,
+                   "transition": "flip"
+                },
+                "Target_VendorStatus": {
+                    "viewId": "idVendorStatus",
+                   "viewName": "VendorStatus",
+                   "viewType": "XML",
+                   "clearAggregation": true,
+                   "transition": "flip"
+
+                },"Target_OverView": {
+                    "viewId": "idOverView",
+                   "viewName": "Overview",
+                   "viewType": "XML",
+                   "clearAggregation": true,
+                   "transition": "flip"
+                }
+             }
+        },
+        "extends": {
+            "component" : "<extendedComponentId>",
+			"minVersion": "<minComp1Version>",
+			"extensions": {}
+        },
+        "contentDensities": {
+            "compact": false,
+            "cozy": false
+        }
+    },
+
+    "sap.platform.abap": {
+        "_version": "1.1.0",
+        "uri": "<uri>"
+    },
+    "sap.platform.hcp": {
+        "_version": "1.1.0",
+        "uri": "<uri>"
+    }
+} 

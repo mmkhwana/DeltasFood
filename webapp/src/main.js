@@ -1,0 +1,1 @@
+include(Vendorapplication.controller.js);
