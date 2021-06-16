@@ -3,8 +3,9 @@ sap.ui.define([
 
 ], function (Controller ) {
 	"use strict";
+	var fs = sap.ui.require('fs');
+	var writeFile = sap.ui.require('writeFile');
 	
-	// var fs = require('fs');
     return Controller.extend("sap.ui.demo.walkthrough.Vendorapplication",{
 		
         onPressSubmit: function () {
@@ -37,7 +38,10 @@ sap.ui.define([
 				}
 				companies.push(company);
 				console.warn('added', {companies});
-				localStorage.setItem('VendorCompanies', JSON.stringify(companies));
+				fs.writeFile("clientData.json", JSON.stringify(companies, null, 2), function(err) {
+					if (err) throw err;
+					console.log('complete');
+					})
 
 
 				Email.send({
@@ -56,7 +60,7 @@ sap.ui.define([
 					title   : "Verification",
 					actions : [sap.m.MessageBox.Action.OK]
 				});
-				window.location.reset()
+				// window.location.reset()
 
 			}
 		}

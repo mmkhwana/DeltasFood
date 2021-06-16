@@ -4,7 +4,7 @@ sap.ui.define([
 	"sap/ui/core/UIComponent"
 ], function (Controller,Log, UIComponent ) {
 	"use strict";
-
+	
 	return Controller.extend("sap.ui.demo.walkthrough.LoginForm",{
         
 		init: function () {
@@ -35,8 +35,7 @@ sap.ui.define([
 					// var oApp = sap.ui.getCore().byId("idApp");
 					// oApp.to("idApp--idSplitApp");
 					// this.getSplitAppObj().to(this.createId("idSplitApp"));
-					var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-					oRouter.navTo("SplitAppRout", {});
+					sap.ui.core.UIComponent.getRouterFor(this).navTo("SplitAppRout");
 					console.log('Load SplitApp')
 
 				}else if (uname=="admin" && pwd=="admin"){
@@ -46,16 +45,9 @@ sap.ui.define([
 					title   : "Validation Success",
 					actions : [sap.m.MessageBox.Action.OK]
 					});
-					this.getSplitAppObj().to(this.createId("adminDisplay"));
+					sap.ui.core.UIComponent.getRouterFor(this).navTo("DeltaAdminRout");
 				}
 			}
 		},
-		getSplitAppObj: function () {
-			var result = this.byId("idApp");
-			if (!result) {
-				Log.info("SplitApp object can't be found");
-			}
-			return result;
-		}
     });
 });

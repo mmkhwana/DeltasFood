@@ -1,9 +1,20 @@
 {
-    "SupplierID": 1,
-    "CompanyName": "New Orleans",
-    "ContactEmail": "NewOrealns@email.com",
-    "CompanyProduct": "Vehicle:Nissan Np 2",
-    "ContactNumber": "012 945 2357",
-    "CompanyRegNumber": "NewOrleans27"
+"Suppliers": [
+                {
+                    "SupplierID": 1,
+                    "CompanyName": "New Orleans",
+                    "ContactEmail": "NewOrealns@email.com",
+                    "CompanyProduct": "Vehicle:Nissan Np 2",
+                    "ContactNumber": "012 945 2357",
+                    "CompanyRegNumber": "NewOrleans27"
+                },
+                {
+                    "SupplierID": 2,
+                    "CompanyName": "Malibongwe",
+                    "ContactEmail": "Malibongwe@email.com",
+                    "CompanyProduct": "Fruits",
+                    "ContactNumber": "012 345 2357",
+                    "CompanyRegNumber": "Malibongwe27"
+                }
+            ]
 }
-    

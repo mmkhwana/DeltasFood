@@ -7,7 +7,10 @@ sap.ui.define([
 
 	return Controller.extend("sap.ui.demo.walkthrough.VendorStatus", {
 
-		
+		onInit: function () {
+			var oJSONModel = new sap.ui.model.json.JSONModel("src/SupplierData.json");
+			this.getView().setModel(oJSONModel,"JSN");
+		},
 	});
 	
 });

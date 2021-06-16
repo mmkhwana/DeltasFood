@@ -11,45 +11,50 @@
             title="Delta Food Admin"
 			backgroundDesign= "Solid"
 			titleAlignment="Center">
-            <VBox class="sapUiSmallMargin">
-		<f:SimpleForm id="SimpleFormChange354wide"
-			editable="true"
-			layout="ResponsiveGridLayout"
-			title="Company Details"
-			labelSpanXL="4"
-			labelSpanL="3"
-			labelSpanM="4"
-			labelSpanS="12"
-			adjustLabelSpan="false"
-			emptySpanXL="0"
-			emptySpanL="4"
-			emptySpanM="0"
-			emptySpanS="0"
-			columnsXL="2"
-			columnsL="1"
-			columnsM="1"
-			singleContainerFullSize="false">
-			<f:content>
-				<Label text="Full company name" />
-				<Input id="name" value="{JSN>/CompanyName}" />
-				<Label text="Company contact email" />
-				<Input value="{JSN>/ContactEmail}"/>
-				<Label text="Company Product"/>
-				<Input value="{JSN>/CompanyProduct}"/>
-				<Label text="Company contact Number" />
-				<Input value="{JSN>/ContactNumber}"/>
-                <Label text="Company regitration number" />
-				<Input value="{JSN>/CompanyRegNumber}" />
-				
-				<Button type="Accept" text="Accept" press="" >
-                    <layoutData><OverflowToolbarLayoutData priority="NeverOverflow" /></layoutData>
-                </Button>
-                <Button type="Warm" text="Decline"  press="">
-                    <layoutData><OverflowToolbarLayoutData  priority="NeverOverflow" /></layoutData>
-                </Button>
-			</f:content>
-		</f:SimpleForm>
-	</VBox>
-        </Page>
+            <customHeader>
+					<Bar>
+						<contentLeft>
+							<Button tooltip="Back" icon="sap-icon://nav-back" press="goToMainPage"/>
+						</contentLeft>
+						<contentMiddle>
+							<Title text="Delta Admin"/>
+						</contentMiddle>
+					</Bar>
+				</customHeader>
+				<content>
+					<SplitApp id="SplitAppDemo" initialDetail="detail" initialMaster="master">
+						<masterPages>
+							<Page title="Vendor Application List" backgroundDesign="List" class="sapUiStdPage">
+								<List items="{JSN>/Suppliers}" id="list" mode="SingleSelect" selectionChange="onItemSelected">
+									<items>
+										<ObjectListItem title="{JSN>CompanyName}">
+											<ObjectAttribute text="Product: {JSN>CompanyProduct}"/>
+										</ObjectListItem>
+									</items>
+								</List>
+							</Page>
+						</masterPages>
+						<detailPages showFooter="true">
+							<Panel>
+								<f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="Application details" id="appDetailsPanel">
+									<Label text="Company Name"/>
+									<Text text="{ModelData>CompanyName}" visible="{ModelData>CompanyName}"></Text>
+									<Label text="Company Email"/>
+									<Text text="{JSN>CompanyEmail}" visible="{JSN>CompanyEmail}"></Text>
+									<Label text="Company product"/>
+									<Text text="{JSN>CompanyProduct}" visible="{JSN>CompanyProduct}"></Text>
+									<Label text="Contact Number"/>
+									<Text text="{JSN>ContactNumber}" visible="{JSN>ContactNumber}"></Text>
+									<Label text="Company Registration Number"/>
+									<Text text="{JSN>CompanyRegNumber}" visible="{JSN>CompanyRegNumber}"></Text>
+								</f:SimpleForm>
+									<Button type="Accept" text="Accept" press=".onPressAccept" ></Button>
+									<Button type="Reject" text="Reject" press=".onPressReject" ></Button>
+							</Panel>
+									
+						</detailPages>
+					</SplitApp>
+				</content>
+    </Page>
     </App>
 </mvc:View>
